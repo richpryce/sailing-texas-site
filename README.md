@@ -190,4 +190,4 @@ To migrate boat listings from the legacy site:
 
 ## 📄 License
 
-Copyright © 2003-present Sailing Texas. All rights reserved.
+Copyright © 2003-present Sailing Texas. All rights reserved..
