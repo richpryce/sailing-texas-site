@@ -1,7 +1,6 @@
 // Cloudflare Pages Function to handle redirects for trailing slashes
-// This middleware automatically redirects any path without a trailing slash
-// to its trailing slash version (for directory-based routing)
-// This works for ALL paths, not just a hardcoded list
+// This middleware runs on every request and redirects paths without trailing slashes
+// to their trailing slash versions
 
 export async function onRequest(context: any): Promise<Response> {
   const url = new URL(context.request.url);
@@ -24,10 +23,22 @@ export async function onRequest(context: any): Promise<Response> {
     return context.next();
   }
 
-  // For any other path without a trailing slash, redirect to the trailing slash version
-  // This automatically handles all paths like:
-  // /boats/macgregor-26x-2005 → /boats/macgregor-26x-2005/
-  // /weather → /weather/
-  // /any/nested/path → /any/nested/path/
-  return Response.redirect(`${url.origin}${pathname}/`, 301);
+  // Try to fetch the path with a trailing slash to see if it exists
+  // If it does, redirect to it
+  try {
+    const response = await fetch(`${url.origin}${pathname}/index.html`, {
+      method: 'HEAD',
+      cf: { cacheTtl: 0 } // Don't cache this check
+    });
+
+    // If the directory exists (status 200), redirect to trailing slash version
+    if (response.ok || response.status === 200) {
+      return Response.redirect(`${url.origin}${pathname}/`, 301);
+    }
+  } catch (e) {
+    // If fetch fails, continue with normal handling
+  }
+
+  // Continue with normal request handling
+  return context.next();
 }
