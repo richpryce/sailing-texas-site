@@ -1,8 +1,0 @@
-name = "sailing-texas-site"
-compatibility_date = "2026-01-11"
-
-# For Cloudflare Pages, use the pages deploy command instead
-# This config is for reference if using wrangler pages deploy
-
-[site]
-bucket = "./_site"
