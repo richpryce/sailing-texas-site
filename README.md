@@ -123,6 +123,55 @@ Edit `src/_data/site.json` to update site metadata.
 | `npm run clean` | Remove `_site` directory |
 | `npm run debug` | Build with debug output |
 
+## 🚀 Deployment
+
+### Cloudflare Pages (Recommended)
+
+**Important:** For static sites like 11ty, use **Cloudflare Pages**, not Workers.
+
+#### Option 1: Via Cloudflare Dashboard (Easiest)
+
+1. **Push your code to GitHub:**
+   ```bash
+   git push origin main
+   ```
+
+2. **Connect to Cloudflare Pages:**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Navigate to **Pages** → **Create a project**
+   - Connect your GitHub repository
+   - Configure build settings:
+     - **Build command:** `npm run build`
+     - **Build output directory:** `_site`
+     - **Root directory:** `/` (or leave empty)
+   - Click **Save and Deploy**
+
+3. **Your site will be live** at `your-project.pages.dev`
+
+#### Option 2: Via Wrangler CLI
+
+```bash
+# Install Wrangler (if not already installed)
+npm install -g wrangler
+
+# Login to Cloudflare
+wrangler login
+
+# Build your site first
+npm run build
+
+# Deploy to Pages
+wrangler pages deploy _site --project-name=sailing-texas-site
+```
+
+**Note:** Use `wrangler pages deploy`, NOT `wrangler deploy` (which is for Workers).
+
+### Other Hosting Options
+
+- **Netlify:** Connect GitHub repo, set build command: `npm run build`, publish: `_site`
+- **Vercel:** Connect GitHub repo, framework preset: Other, build command: `npm run build`, output: `_site`
+- **GitHub Pages:** Use GitHub Actions to build and deploy
+
 ## 📦 Migrating Legacy Content
 
 To migrate boat listings from the legacy site:
