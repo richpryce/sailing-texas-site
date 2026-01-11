@@ -9,7 +9,8 @@
     "build:prod": "NODE_ENV=production npx @11ty/eleventy",
     "clean": "rm -rf _site",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "deploy": "npm run build && npx wrangler pages deploy _site --project-name=sailing-texas-site"
+    "deploy": "npm run build && npx wrangler pages deploy _site --project-name=sailing-texas-site --commit-dirty=true",
+    "deploy:create": "npm run build && npx wrangler pages project create sailing-texas-site && npx wrangler pages deploy _site --project-name=sailing-texas-site --commit-dirty=true"
   },
   "keywords": [
     "sailing",
