@@ -9,7 +9,7 @@
     "build:prod": "NODE_ENV=production npx @11ty/eleventy",
     "clean": "rm -rf _site",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "deploy": "npm run build && wrangler pages deploy _site --project-name=sailing-texas-site"
+    "deploy": "npm run build && npx wrangler pages deploy _site --project-name=sailing-texas-site"
   },
   "keywords": [
     "sailing",
@@ -23,6 +23,7 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "@11ty/eleventy-img": "^6.0.4"
+    "@11ty/eleventy-img": "^6.0.4",
+    "wrangler": "^4.58.0"
   }
 }
