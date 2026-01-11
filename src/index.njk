@@ -1,0 +1,180 @@
+---
+layout: layouts/home.njk
+title: Welcome
+description: Your premier destination for buying and selling sailboats in Texas. Browse sailboats for sale, learn to sail, and connect with the Texas sailing community.
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Sailing Texas</h1>
+    <p>Your premier destination for buying and selling sailboats in Texas. Browse our extensive collection, learn to sail, and join the vibrant Texas sailing community.</p>
+
+    <div class="hero-buttons">
+      <a href="/boats/" class="btn btn-primary btn-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+        Browse Sailboats
+      </a>
+      <a href="/post-ad/" class="btn btn-outline btn-lg">
+        Post Free Ad
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-number">{{ site.stats.boatsInGallery | formatNumber }}</span>
+        <span class="hero-stat-label">Boats in Gallery</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">{{ site.stats.photos | formatNumber }}</span>
+        <span class="hero-stat-label">Photos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-number">{{ site.stats.videos }}</span>
+        <span class="hero-stat-label">Videos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <!-- Welcome Section -->
+        <div class="section-header text-left">
+          <h2 class="section-title">Welcome to Sailing Texas!</h2>
+          <p class="section-subtitle text-left">
+            We've been helping sailors across the US and around the world find their perfect sailboat since {{ site.founded }}. Whether you're buying, selling, or learning to sail, we're here to help.
+          </p>
+        </div>
+
+        <!-- Featured Boats -->
+        <div class="mb-xl">
+          <h2 class="section-title mb-lg">Recent Listings</h2>
+          <div class="boats-grid">
+            {% for boat in collections.boats | limit(6) %}
+              {% set boatData = boat %}
+              {% include "partials/boat-card.njk" %}
+            {% else %}
+              <p>New boat listings coming soon. <a href="/post-ad/">Post your sailboat for sale!</a></p>
+            {% endfor %}
+          </div>
+          <div class="text-center mt-xl">
+            <a href="/boats/" class="btn btn-secondary">View All Sailboats →</a>
+          </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="mt-xl">
+          <h2 class="section-title mb-lg text-center">What We Offer</h2>
+          <div class="featured-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+              </div>
+              <h3>Sailboat Classifieds</h3>
+              <p>Browse hundreds of sailboats for sale from across Texas and beyond. Post your own ad for free!</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10 8 16 12 10 16 10 8"/>
+                </svg>
+              </div>
+              <h3>Sailing Videos</h3>
+              <p>Watch over {{ site.stats.videos }} sailing videos covering techniques, boat reviews, and Texas sailing adventures.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                </svg>
+              </div>
+              <h3>How-To Articles</h3>
+              <p>Learn everything from basic knots to advanced sailing techniques with our comprehensive guides.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="mt-xl">
+          <h2 class="section-title mb-lg">Popular Sailboat Types</h2>
+          <div class="featured-grid">
+            <a href="/boats/catalina/" class="feature-card">
+              <h3>Catalina Sailboats</h3>
+              <p>Browse our selection of Catalina and Capri sailboats for sale.</p>
+            </a>
+            <a href="/boats/hunter/" class="feature-card">
+              <h3>Hunter Sailboats</h3>
+              <p>Find quality Hunter sailboats in various sizes and conditions.</p>
+            </a>
+            <a href="/boats/macgregor/" class="feature-card">
+              <h3>MacGregor Sailboats</h3>
+              <p>Explore MacGregor and Venture sailboats perfect for trailering.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Quick Actions</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/">🚤 Sailboats for Sale</a></li>
+            <li><a href="/post-ad/">📝 Post Free Ad</a></li>
+            <li><a href="/boats/wanted/">🔍 Sailboats Wanted</a></li>
+            <li><a href="/gallery/">📸 Photo Gallery</a></li>
+            <li><a href="/how-to/">📚 How-To Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Texas Lakes Weather</h2>
+          <div class="weather-links">
+            <a href="https://www.sailflow.com/map#30.421,-97.91,7,1" target="_blank" rel="noopener">Lake Travis</a>
+            <a href="https://www.sailflow.com/map#29.875,-98.263,7,1" target="_blank" rel="noopener">Canyon Lake</a>
+            <a href="https://www.sailflow.com/map#33.801,-96.807,14,1" target="_blank" rel="noopener">Lake Texoma</a>
+            <a href="https://www.sailflow.com/map#32.985,-97.087,7,1" target="_blank" rel="noopener">Lake Grapevine</a>
+            <a href="https://www.sailflow.com/map#31.867,-97.371,10,1" target="_blank" rel="noopener">Lake Whitney</a>
+            <a href="https://www.sailflow.com/map#27.801,-97.396,10,1" target="_blank" rel="noopener">Corpus Christi</a>
+            <a href="https://www.sailflow.com/map#29.561,-98.937,10,2" target="_blank" rel="noopener">Lake Medina</a>
+            <a href="https://www.sailflow.com/map#30.794,-98.429,7,1" target="_blank" rel="noopener">Lake Buchanan</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Texas Sailing Clubs</h2>
+          <ul class="sidebar-list">
+            <li><a href="https://www.austinyachtclub.net/" target="_blank" rel="noopener">Austin Yacht Club</a></li>
+            <li><a href="https://www.rcyc.org/" target="_blank" rel="noopener">Rush Creek Yacht Club</a></li>
+            <li><a href="https://www.lcyc.net/" target="_blank" rel="noopener">Lake Canyon Yacht Club</a></li>
+            <li><a href="https://www.fwbc.com/" target="_blank" rel="noopener">Ft. Worth Boat Club</a></li>
+            <li><a href="https://www.texascenterboard.org" target="_blank" rel="noopener">Texas Centerboard Circuit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Resources</h2>
+          <ul class="sidebar-list">
+            <li><a href="/lessons/">⛵ Sailing Lessons</a></li>
+            <li><a href="/rentals/">🏖️ Boat Rentals</a></li>
+            <li><a href="/scam-warnings/">⚠️ Scam Warnings</a></li>
+            <li><a href="https://sailingtexas.proboards.com/" target="_blank" rel="noopener">💬 Forums</a></li>
+            <li><a href="/sailing-class/">🎓 Free Sailing Class</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

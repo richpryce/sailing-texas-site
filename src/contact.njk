@@ -1,0 +1,101 @@
+---
+layout: layouts/base.njk
+title: Contact Us
+description: Get in touch with Sailing Texas. We're here to help with your sailboat buying, selling, and sailing questions.
+permalink: /contact/
+---
+
+<section class="boat-detail-header">
+  <div class="boat-detail-header-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Contact</li>
+      </ol>
+    </nav>
+    <h1>Contact Us</h1>
+    <p>Have questions about sailboats or want to advertise? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="sidebar-card" style="max-width: 600px;">
+          <h2>Get in Touch</h2>
+
+          <p style="margin-bottom: var(--space-lg);">
+            Sailing Texas has been serving the sailing community since {{ site.founded }}. Whether you have questions about listing your boat, need help finding a sailboat, or want to learn more about sailing in Texas, we're here to help.
+          </p>
+
+          <div style="margin-bottom: var(--space-lg);">
+            <h3 style="font-size: var(--text-base); margin-bottom: var(--space-sm);">📧 Email</h3>
+            <p>For general inquiries: <a href="mailto:{{ site.email }}" style="color: var(--color-ocean-mid);">{{ site.email }}</a></p>
+          </div>
+
+          <div style="margin-bottom: var(--space-lg);">
+            <h3 style="font-size: var(--text-base); margin-bottom: var(--space-sm);">💬 Forums</h3>
+            <p>Join our community on the <a href="https://sailingtexas.proboards.com/" target="_blank" rel="noopener" style="color: var(--color-ocean-mid);">Sailing Texas Forums</a> to connect with other sailors.</p>
+          </div>
+
+          <div style="margin-bottom: var(--space-lg);">
+            <h3 style="font-size: var(--text-base); margin-bottom: var(--space-sm);">📱 Social Media</h3>
+            <p>Follow us on <a href="https://www.facebook.com/sailingtexas" target="_blank" rel="noopener" style="color: var(--color-ocean-mid);">Facebook</a> for updates and sailing content.</p>
+          </div>
+        </div>
+
+        <div class="sidebar-card mt-xl" style="max-width: 600px;">
+          <h2>Frequently Asked Questions</h2>
+
+          <details style="margin-bottom: var(--space-md);">
+            <summary style="cursor: pointer; font-weight: 600; padding: var(--space-sm) 0;">How do I post a sailboat for sale?</summary>
+            <p style="padding: var(--space-md) 0; color: var(--color-text-muted);">
+              Posting your sailboat for sale on Sailing Texas is free! Visit our <a href="/post-ad/">Post Free Ad</a> page to get started. Include clear photos and a detailed description for best results.
+            </p>
+          </details>
+
+          <details style="margin-bottom: var(--space-md);">
+            <summary style="cursor: pointer; font-weight: 600; padding: var(--space-sm) 0;">Is listing my boat really free?</summary>
+            <p style="padding: var(--space-md) 0; color: var(--color-text-muted);">
+              Yes! Sailing Texas has always offered free sailboat classified ads. We believe in supporting the sailing community.
+            </p>
+          </details>
+
+          <details style="margin-bottom: var(--space-md);">
+            <summary style="cursor: pointer; font-weight: 600; padding: var(--space-sm) 0;">How long will my ad stay active?</summary>
+            <p style="padding: var(--space-md) 0; color: var(--color-text-muted);">
+              Ads remain active until you sell your boat or ask us to remove the listing. We recommend updating your ad periodically to keep it fresh.
+            </p>
+          </details>
+
+          <details>
+            <summary style="cursor: pointer; font-weight: 600; padding: var(--space-sm) 0;">Can I advertise my business on Sailing Texas?</summary>
+            <p style="padding: var(--space-md) 0; color: var(--color-text-muted);">
+              Yes! We offer advertising opportunities for sailing-related businesses. Contact us at {{ site.email }} to discuss options.
+            </p>
+          </details>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Quick Links</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/">🚤 Sailboats for Sale</a></li>
+            <li><a href="/post-ad/">📝 Post Free Ad</a></li>
+            <li><a href="/scam-warnings/">⚠️ Scam Warnings</a></li>
+            <li><a href="/how-to/">📚 How-To Articles</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>About Sailing Texas</h2>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted);">
+            Founded in {{ site.founded }}, Sailing Texas has grown to become one of the premier resources for sailboat classifieds and sailing information in Texas. With over {{ site.stats.boatsInGallery | localeNumber }} boats in our photo gallery, we're dedicated to helping sailors find their perfect boat.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

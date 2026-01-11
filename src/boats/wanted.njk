@@ -1,0 +1,88 @@
+---
+layout: layouts/base.njk
+title: Sailboats Wanted
+description: Post what sailboat you're looking for or browse wanted ads from buyers seeking specific sailboats.
+permalink: /boats/wanted/
+---
+
+<section class="boat-detail-header">
+  <div class="boat-detail-header-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/boats/">Sailboats</a></li>
+        <li aria-current="page">Wanted</li>
+      </ol>
+    </nav>
+    <h1>Sailboats Wanted</h1>
+    <p>Looking for a specific sailboat? Post your wanted ad or browse what others are seeking.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="sidebar-card mb-xl">
+          <h2>Post a Wanted Ad</h2>
+          <p style="margin-bottom: var(--space-md);">
+            Can't find the sailboat you're looking for in our listings? Post a free wanted ad and let sellers come to you!
+          </p>
+          <p style="margin-bottom: var(--space-lg);">
+            Email us with:
+          </p>
+          <ul style="margin-left: var(--space-lg); margin-bottom: var(--space-lg);">
+            <li style="margin-bottom: var(--space-sm); list-style: disc;">Boat make/model you're seeking</li>
+            <li style="margin-bottom: var(--space-sm); list-style: disc;">Year range (if any)</li>
+            <li style="margin-bottom: var(--space-sm); list-style: disc;">Your budget</li>
+            <li style="margin-bottom: var(--space-sm); list-style: disc;">Must-have features</li>
+            <li style="margin-bottom: var(--space-sm); list-style: disc;">Your contact information</li>
+          </ul>
+          <a href="mailto:{{ site.email }}?subject=Sailboat Wanted Ad for Sailing Texas" class="btn btn-primary">
+            Post Wanted Ad
+          </a>
+        </div>
+
+        <h2 class="section-title mb-lg">Current Wanted Ads</h2>
+
+        <div class="sidebar-card mb-xl" style="text-align: center; padding: var(--space-2xl);">
+          <p style="color: var(--color-text-muted);">
+            View current wanted ads on our legacy site while we migrate content.
+          </p>
+          <a href="https://sailingtexas.com/cboats2wanted.html" target="_blank" rel="noopener" class="btn btn-secondary mt-lg">
+            View Wanted Ads →
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Have a Boat to Sell?</h2>
+          <p style="margin-bottom: var(--space-md);">
+            If you have a sailboat that matches what someone is looking for, contact them directly
+            or list your boat in our classifieds.
+          </p>
+          <a href="/post-ad/" class="btn btn-secondary">Post Your Boat for Sale</a>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Quick Links</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/">🚤 Sailboats for Sale</a></li>
+            <li><a href="/post-ad/">📝 Post Free Ad</a></li>
+            <li><a href="/gallery/">📸 Photo Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Popular Searches</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/catalina/">Catalina Sailboats</a></li>
+            <li><a href="/boats/hunter/">Hunter Sailboats</a></li>
+            <li><a href="/boats/macgregor/">MacGregor Sailboats</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

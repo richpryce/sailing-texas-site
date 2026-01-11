@@ -1,0 +1,74 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/assets/images/sailingtexasthumbnail.gif" alt="" width="60" height="60">
+          <span>Sailing Texas</span>
+        </a>
+        <p>Your premier destination for buying and selling sailboats in Texas since {{ site.founded }}.</p>
+        <div class="footer-stats">
+          <div class="stat">
+            <span class="stat-number">{{ site.stats.boatsInGallery | localeNumber }}</span>
+            <span class="stat-label">Boats in Gallery</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">{{ site.stats.photos | localeNumber }}</span>
+            <span class="stat-label">Photos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">{{ site.stats.videos }}</span>
+            <span class="stat-label">Videos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          {% for link in navigation.footer.quickLinks %}
+          <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Resources</h3>
+        <ul>
+          {% for link in navigation.footer.resources %}
+          <li><a href="{{ link.url }}">{{ link.text }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Community</h3>
+        <ul>
+          {% for link in navigation.footer.community %}
+          <li>
+            <a href="{{ link.url }}" {% if link.url.startsWith('http') %}target="_blank" rel="noopener"{% endif %}>
+              {{ link.text }}
+              {% if link.url.startsWith('http') %}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+              {% endif %}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.founded }}-{% year %} Alison Luckenbach. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </div>
+</footer>

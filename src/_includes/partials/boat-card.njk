@@ -1,0 +1,34 @@
+{# Boat Card Component - Usage: {% include "partials/boat-card.njk" %} #}
+<article class="boat-card{% if boat.status == 'sold' %} is-sold{% endif %}">
+  <a href="{{ boat.url }}" class="boat-card-link">
+    <div class="boat-card-image">
+      {% if boat.data.images and boat.data.images[0] %}
+      <img src="{{ boat.data.images[0] }}" alt="{{ boat.data.title }}" loading="lazy">
+      {% else %}
+      <div class="boat-card-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 18l6-6 4 4 8-8"/>
+          <circle cx="17" cy="7" r="2"/>
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+        </svg>
+      </div>
+      {% endif %}
+      {% if boat.data.status == 'sold' %}
+      <span class="sold-badge">SOLD</span>
+      {% endif %}
+    </div>
+    <div class="boat-card-content">
+      <h3 class="boat-card-title">{{ boat.data.title }}</h3>
+      <div class="boat-card-meta">
+        {% if boat.data.year %}<span class="boat-year">{{ boat.data.year }}</span>{% endif %}
+        {% if boat.data.location %}<span class="boat-location">{{ boat.data.location }}</span>{% endif %}
+      </div>
+      {% if boat.data.price and boat.data.status != 'sold' %}
+      <div class="boat-card-price">{{ boat.data.price | formatPrice }}</div>
+      {% endif %}
+      {% if boat.data.description %}
+      <p class="boat-card-excerpt">{{ boat.data.description | truncate(100) }}</p>
+      {% endif %}
+    </div>
+  </a>
+</article>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}{% if title %} | {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="author" content="{{ site.author }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if featuredImage %}
+  <meta property="og:image" content="{{ site.url }}{{ featuredImage }}">
+  {% endif %}
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/gif" href="/assets/images/sailingtexasthumbnail.gif">
+</head>
+<body class="{{ bodyClass or '' }}">
+  {% include "partials/header.njk" %}
+
+  <main class="main-content" id="main-content">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

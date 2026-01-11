@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+title: Sailing Videos
+description: Watch sailing videos covering techniques, boat reviews, Texas sailing adventures, and more. Over 334 sailing videos available.
+permalink: /videos/
+---
+
+<section class="boat-detail-header">
+  <div class="boat-detail-header-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Videos</li>
+      </ol>
+    </nav>
+    <h1>Sailing Videos</h1>
+    <p>Watch over {{ site.stats.videos }} sailing videos covering techniques, boat reviews, and Texas sailing adventures.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <!-- Video Categories -->
+        <div class="featured-grid mb-xl">
+          <a href="/videos/how-to/" class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polygon points="10 8 16 12 10 16 10 8"/>
+              </svg>
+            </div>
+            <h3>How-To Videos</h3>
+            <p>Learn sailing techniques, knots, rigging, and more from instructional videos.</p>
+          </a>
+
+          <a href="/videos/boat-reviews/" class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              </svg>
+            </div>
+            <h3>Boat Reviews</h3>
+            <p>Watch walkthroughs and reviews of popular sailboat models.</p>
+          </a>
+
+          <a href="/videos/adventures/" class="feature-card">
+            <div class="feature-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="10" r="3"/>
+                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+              </svg>
+            </div>
+            <h3>Sailing Adventures</h3>
+            <p>Join us on Texas lake sailing trips and coastal adventures.</p>
+          </a>
+        </div>
+
+        <!-- Featured Videos -->
+        <h2 class="section-title mb-lg">Featured Videos</h2>
+
+        <div class="articles-list">
+          <article class="article-item">
+            <div class="article-date">
+              <span class="article-date-day">▶</span>
+            </div>
+            <div class="article-content">
+              <h4><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">View Full Video Library →</a></h4>
+              <p>Access our complete collection of sailing videos on the legacy site while we migrate content.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Video Content Coming Soon -->
+        <div class="sidebar-card mt-xl" style="text-align: center; padding: var(--space-2xl);">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-ocean-light)" stroke-width="1.5" style="margin: 0 auto var(--space-lg);">
+            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+            <line x1="7" y1="2" x2="7" y2="22"/>
+            <line x1="17" y1="2" x2="17" y2="22"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <line x1="2" y1="7" x2="7" y2="7"/>
+            <line x1="2" y1="17" x2="7" y2="17"/>
+            <line x1="17" y1="7" x2="22" y2="7"/>
+            <line x1="17" y1="17" x2="22" y2="17"/>
+          </svg>
+          <h3>Video Library Migration In Progress</h3>
+          <p style="color: var(--color-text-muted); max-width: 500px; margin: var(--space-md) auto;">
+            We're in the process of migrating our extensive video library to this new site.
+            In the meantime, you can access all {{ site.stats.videos }} videos on our legacy site.
+          </p>
+          <a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener" class="btn btn-primary mt-lg">
+            Visit Legacy Video Library →
+          </a>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Video Categories</h2>
+          <ul class="sidebar-list">
+            <li><a href="/videos/how-to/">🎓 How-To Videos</a></li>
+            <li><a href="/videos/boat-reviews/">🚤 Boat Reviews</a></li>
+            <li><a href="/videos/adventures/">⛵ Sailing Adventures</a></li>
+            <li><a href="/videos/regattas/">🏆 Regatta Coverage</a></li>
+            <li><a href="/videos/maintenance/">🔧 Maintenance Tips</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Popular Topics</h2>
+          <ul class="sidebar-list">
+            <li><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">Rigging & Setup</a></li>
+            <li><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">Knot Tying</a></li>
+            <li><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">Docking & Mooring</a></li>
+            <li><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">Trailering</a></li>
+            <li><a href="https://www.sailingtexas.com/Movies/sailingvideosindex.html" target="_blank" rel="noopener">Weather & Safety</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Submit a Video</h2>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted);">
+            Have a great sailing video to share? We'd love to feature it in our library.
+          </p>
+          <a href="/contact/" class="btn btn-secondary mt-md" style="width: 100%;">Contact Us</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

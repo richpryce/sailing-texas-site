@@ -1,0 +1,46 @@
+{
+  "main": [
+    { "text": "Sailboats for Sale", "url": "/boats/" },
+    { "text": "Rentals", "url": "/rentals/" },
+    { "text": "How To", "url": "/how-to/" },
+    { "text": "Videos", "url": "/videos/" },
+    { "text": "Texas Regattas", "url": "/regattas/" },
+    { "text": "Gallery", "url": "/gallery/" },
+    { "text": "Texas Lakes", "url": "/lakes/" },
+    { "text": "Contact", "url": "/contact/" }
+  ],
+  "secondary": [
+    { "text": "Forums", "url": "https://sailingtexas.proboards.com/" },
+    { "text": "Bookstore", "url": "/bookstore/" },
+    { "text": "Search", "url": "/search/" },
+    { "text": "Lessons", "url": "/lessons/" },
+    { "text": "Sails", "url": "/sails/" },
+    { "text": "Scam Warnings", "url": "/scam-warnings/" },
+    { "text": "Sailboats Wanted", "url": "/boats/wanted/" },
+    { "text": "Free Sailboat Ad", "url": "/post-ad/" },
+    { "text": "Texas State Parks", "url": "/state-parks/" },
+    { "text": "Free Sailing Class", "url": "/sailing-class/" }
+  ],
+  "footer": {
+    "quickLinks": [
+      { "text": "Sailboats for Sale", "url": "/boats/" },
+      { "text": "Catalina Sailboats", "url": "/boats/catalina/" },
+      { "text": "Hunter Sailboats", "url": "/boats/hunter/" },
+      { "text": "MacGregor Sailboats", "url": "/boats/macgregor/" },
+      { "text": "Post Free Ad", "url": "/post-ad/" }
+    ],
+    "resources": [
+      { "text": "How To Articles", "url": "/how-to/" },
+      { "text": "Sailing Videos", "url": "/videos/" },
+      { "text": "Texas Lakes Info", "url": "/lakes/" },
+      { "text": "Weather Links", "url": "/weather/" },
+      { "text": "Sailing Lessons", "url": "/lessons/" }
+    ],
+    "community": [
+      { "text": "Forums", "url": "https://sailingtexas.proboards.com/" },
+      { "text": "Texas Regattas", "url": "/regattas/" },
+      { "text": "Yacht Clubs", "url": "/clubs/" },
+      { "text": "Facebook", "url": "https://www.facebook.com/sailingtexas" }
+    ]
+  }
+}

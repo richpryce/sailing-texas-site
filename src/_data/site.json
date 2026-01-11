@@ -1,0 +1,13 @@
+{
+  "name": "Sailing Texas",
+  "description": "Your premier destination for buying and selling sailboats in Texas. Browse our extensive collection of new and used sailboats, learn to sail, and connect with the Texas sailing community.",
+  "url": "https://www.sailingtexas.com",
+  "author": "Sailing Texas",
+  "email": "contact@sailingtexas.com",
+  "founded": 2003,
+  "stats": {
+    "boatsInGallery": 20000,
+    "photos": 98462,
+    "videos": 334
+  }
+}

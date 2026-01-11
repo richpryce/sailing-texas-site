@@ -1,0 +1,118 @@
+---
+layout: layouts/base.njk
+title: Sailboat Photo Gallery
+description: Browse our collection of over 20,000 sailboat photos. Find photos of Catalina, Hunter, MacGregor, and many other sailboat brands.
+permalink: /gallery/
+---
+
+<section class="boat-detail-header">
+  <div class="boat-detail-header-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Photo Gallery</li>
+      </ol>
+    </nav>
+    <h1>Sailboat Photo Gallery</h1>
+    <p>Browse our collection of over {{ site.stats.boatsInGallery | localeNumber }} sailboats with {{ site.stats.photos | localeNumber }} photos.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="sidebar-card mb-xl" style="text-align: center; padding: var(--space-2xl);">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--color-ocean-light)" stroke-width="1.5" style="margin: 0 auto var(--space-lg);">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <h2>{{ site.stats.boatsInGallery | localeNumber }}+ Sailboats</h2>
+          <p style="color: var(--color-text-muted); max-width: 500px; margin: var(--space-md) auto;">
+            Our photo gallery contains images of sailboats that have been listed on Sailing Texas since 2002.
+            It's an invaluable resource for researching sailboat models, comparing conditions, and finding fair market prices.
+          </p>
+          <a href="https://www.sailingtexas.com/cboats99.html" target="_blank" rel="noopener" class="btn btn-primary mt-lg">
+            Browse Photo Gallery →
+          </a>
+        </div>
+
+        <h2 class="section-title mb-lg">Browse by Brand</h2>
+
+        <div class="featured-grid">
+          <a href="https://www.sailingtexas.com/cboats2catalinas.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>Catalina / Capri</h3>
+            <p>One of the most popular sailboat brands with extensive photo coverage.</p>
+          </a>
+
+          <a href="https://www.sailingtexas.com/cboats2hunters.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>Hunter</h3>
+            <p>Browse photos of Hunter sailboats from all eras.</p>
+          </a>
+
+          <a href="https://www.sailingtexas.com/cboats2macs.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>MacGregor / Venture</h3>
+            <p>Popular trailerable sailboats with detailed photo galleries.</p>
+          </a>
+
+          <a href="https://www.sailingtexas.com/cboats99.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>O'Day</h3>
+            <p>Classic O'Day sailboats from the golden era of sailing.</p>
+          </a>
+
+          <a href="https://www.sailingtexas.com/cboats99.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>Com-Pac</h3>
+            <p>Quality pocket cruisers perfect for Texas lakes.</p>
+          </a>
+
+          <a href="https://www.sailingtexas.com/cboats99.html" target="_blank" rel="noopener" class="feature-card">
+            <h3>All Brands</h3>
+            <p>Browse the complete photo gallery with all sailboat brands.</p>
+          </a>
+        </div>
+
+        <div class="sidebar-card mt-xl">
+          <h2>Research Tool</h2>
+          <p style="margin-bottom: var(--space-md);">
+            Use our photo gallery to research sailboat models before buying. Compare different years,
+            see typical equipment configurations, and understand what to look for when inspecting boats.
+          </p>
+          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <a href="/boats/" class="btn btn-secondary">Current Listings</a>
+            <a href="/how-to/" class="btn btn-secondary">Buying Guide</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Gallery Stats</h2>
+          <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <div>
+              <span style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-sunset-gold);">{{ site.stats.boatsInGallery | localeNumber }}+</span>
+              <span style="display: block; font-size: var(--text-sm); color: var(--color-text-muted);">Boats Documented</span>
+            </div>
+            <div>
+              <span style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-sunset-gold);">{{ site.stats.photos | localeNumber }}+</span>
+              <span style="display: block; font-size: var(--text-sm); color: var(--color-text-muted);">Total Photos</span>
+            </div>
+            <div>
+              <span style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-sunset-gold);">2002</span>
+              <span style="display: block; font-size: var(--text-sm); color: var(--color-text-muted);">Archive Started</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Quick Links</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/">🚤 Current Listings</a></li>
+            <li><a href="/post-ad/">📝 Post Your Boat</a></li>
+            <li><a href="/videos/">🎬 Sailing Videos</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

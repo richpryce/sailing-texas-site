@@ -1,0 +1,27 @@
+{
+  "name": "sailing-texas-11ty",
+  "version": "1.0.0",
+  "description": "Sailing Texas - Your premier destination for buying and selling sailboats in Texas",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "build:prod": "NODE_ENV=production npx @11ty/eleventy",
+    "clean": "rm -rf _site",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
+  },
+  "keywords": [
+    "sailing",
+    "texas",
+    "sailboats",
+    "classifieds",
+    "11ty",
+    "eleventy"
+  ],
+  "author": "Sailing Texas",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-img": "^6.0.4"
+  }
+}

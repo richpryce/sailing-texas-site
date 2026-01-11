@@ -1,0 +1,86 @@
+---
+layout: layouts/base.njk
+title: MacGregor Sailboats for Sale
+description: Browse MacGregor and Venture sailboats for sale in Texas. Find MacGregor 26, 26X, 26M, and Venture models.
+permalink: /boats/macgregor/
+---
+
+<section class="boat-detail-header">
+  <div class="boat-detail-header-content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/boats/">Sailboats</a></li>
+        <li aria-current="page">MacGregor</li>
+      </ol>
+    </nav>
+    <h1>MacGregor Sailboats for Sale</h1>
+    <p>Browse MacGregor and Venture sailboats available in Texas and surrounding areas.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-main">
+        <div class="sidebar-card mb-xl">
+          <h2>About MacGregor</h2>
+          <p>
+            MacGregor sailboats are famous for their trailerable designs and motorsailer capabilities.
+            The MacGregor 26 series with water ballast can be towed by most vehicles and powered at
+            hull speed when the wind dies. Perfect for exploring different Texas lakes!
+          </p>
+        </div>
+
+        <h2 class="section-title mb-lg">Available MacGregor Boats</h2>
+
+        <div class="boats-grid mb-xl">
+          {% for boat in collections.boats %}
+            {% if 'macgregor' in boat.data.tags %}
+              {% set boatData = boat %}
+              {% include "partials/boat-card.njk" %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="sidebar-card" style="text-align: center; padding: var(--space-2xl);">
+          <p style="color: var(--color-text-muted);">
+            Browse more MacGregor sailboats in our photo gallery archive.
+          </p>
+          <a href="https://www.sailingtexas.com/cboats2macs.html" target="_blank" rel="noopener" class="btn btn-secondary mt-lg">
+            View MacGregor Archive →
+          </a>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card">
+          <h2>Popular Models</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/macgregor/?model=26x">MacGregor 26X</a></li>
+            <li><a href="/boats/macgregor/?model=26m">MacGregor 26M</a></li>
+            <li><a href="/boats/macgregor/?model=26s">MacGregor 26S</a></li>
+            <li><a href="/boats/macgregor/?model=venture">Venture Series</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Other Brands</h2>
+          <ul class="sidebar-list">
+            <li><a href="/boats/catalina/">Catalina</a></li>
+            <li><a href="/boats/hunter/">Hunter</a></li>
+            <li><a href="/boats/">All Sailboats</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h2>Sell Your MacGregor</h2>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted);">
+            Have a MacGregor to sell? List it for free on Sailing Texas.
+          </p>
+          <a href="/post-ad/" class="btn btn-primary mt-md" style="width: 100%;">Post Free Ad</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
