@@ -204,7 +204,13 @@
       
       <div class="boat-gallery">
         <div class="boat-gallery-main">
-          <img src="/assets/images/boats/picmacgregor26x162e.jpg" alt="MacGregor 26X, 2005" id="main-boat-image">
+          <img 
+            src="/assets/images/boats/picmacgregor26x162e.jpg" 
+            alt="MacGregor 26X, 2005" 
+            id="main-boat-image"
+            loading="eager"
+            onerror="this.onerror=null; this.src='/assets/images/sailingtexasthumbnail.gif'; this.alt='Image not available';"
+          >
         </div>
         
       </div>
