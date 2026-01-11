@@ -1,0 +1,21 @@
+# Cloudflare Pages redirects
+# Ensure trailing slashes work correctly
+# Redirect URLs without trailing slashes to their trailing slash versions
+/weather /weather/ 200
+/regattas /regattas/ 200
+/gallery /gallery/ 200
+/sailing-class /sailing-class/ 200
+/boats /boats/ 200
+/rentals /rentals/ 200
+/how-to /how-to/ 200
+/videos /videos/ 200
+/lakes /lakes/ 200
+/contact /contact/ 200
+/bookstore /bookstore/ 200
+/search /search/ 200
+/lessons /lessons/ 200
+/sails /sails/ 200
+/scam-warnings /scam-warnings/ 200
+/state-parks /state-parks/ 200
+/clubs /clubs/ 200
+/post-ad /post-ad/ 200
