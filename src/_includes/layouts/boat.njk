@@ -35,9 +35,9 @@ bodyClass: boat-listing-page
       {% if images and images.length > 0 %}
       <div class="boat-gallery">
         <div class="boat-gallery-main">
-          <img 
-            src="{{ images[0] }}" 
-            alt="{{ title }}" 
+          <img
+            src="{{ images[0] }}"
+            alt="{{ title }}"
             id="main-boat-image"
             loading="eager"
             onerror="this.onerror=null; this.src='/assets/images/sailingtexasthumbnail.gif'; this.alt='Image not available';"
@@ -47,8 +47,8 @@ bodyClass: boat-listing-page
         <div class="boat-gallery-thumbs">
           {% for image in images %}
           <button class="thumb-btn{% if loop.first %} active{% endif %}" data-image="{{ image }}">
-            <img 
-              src="{{ image }}" 
+            <img
+              src="{{ image }}"
               alt="{{ title }} - Image {{ loop.index }}"
               loading="lazy"
               onerror="this.onerror=null; this.style.display='none';"

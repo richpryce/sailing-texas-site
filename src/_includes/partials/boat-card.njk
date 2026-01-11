@@ -3,9 +3,9 @@
   <a href="{{ boat.url }}" class="boat-card-link">
     <div class="boat-card-image">
       {% if boat.data.images and boat.data.images[0] %}
-      <img 
-        src="{{ boat.data.images[0] }}" 
-        alt="{{ boat.data.title }}" 
+      <img
+        src="{{ boat.data.images[0] }}"
+        alt="{{ boat.data.title }}"
         loading="lazy"
         onerror="this.onerror=null; this.src='/assets/images/sailingtexasthumbnail.gif'; this.alt='{{ boat.data.title }} - Image not available';"
       >

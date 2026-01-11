@@ -78,26 +78,70 @@ function initBoatGallery() {
 
   if (!mainImage || thumbButtons.length === 0) return;
 
+  // Ensure main image is visible initially (fix race condition)
+  // Check if image is already loaded (cached or loaded before JS runs)
+  if (mainImage.complete && mainImage.naturalWidth > 0) {
+    // Image already loaded, ensure it's visible
+    mainImage.style.opacity = '1';
+  } else {
+    // Image not loaded yet, set up fade-in
+    // But don't hide it if it's already partially loaded
+    const currentOpacity = window.getComputedStyle(mainImage).opacity;
+    if (currentOpacity !== '0') {
+      // Only set to 0 if not already set (preserve any existing styles)
+      mainImage.style.opacity = '0';
+    }
+    mainImage.style.transition = 'opacity 0.3s ease';
+    
+    const showMainImage = () => {
+      mainImage.style.opacity = '1';
+    };
+    
+    // Use both load and error events
+    mainImage.addEventListener('load', showMainImage, { once: true });
+    mainImage.addEventListener('error', showMainImage, { once: true });
+    
+    // Fallback: check multiple times in case load event already fired
+    const checkLoaded = () => {
+      if (mainImage.complete && mainImage.naturalWidth > 0) {
+        showMainImage();
+      }
+    };
+    
+    // Check immediately
+    checkLoaded();
+    
+    // Check after a short delay (race condition protection)
+    setTimeout(checkLoaded, 50);
+    setTimeout(checkLoaded, 200);
+  }
+
   thumbButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const newSrc = btn.dataset.image;
 
       // Update main image with fade effect
       mainImage.style.opacity = '0';
+      mainImage.style.transition = 'opacity 0.15s ease';
 
-      setTimeout(() => {
+      // Create new image to preload
+      const newImg = new Image();
+      newImg.onload = () => {
         mainImage.src = newSrc;
         mainImage.style.opacity = '1';
-      }, 150);
+      };
+      newImg.onerror = () => {
+        // If image fails, still show it (error handler in HTML will deal with it)
+        mainImage.src = newSrc;
+        mainImage.style.opacity = '1';
+      };
+      newImg.src = newSrc;
 
       // Update active state
       thumbButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     });
   });
-
-  // Add smooth transition to main image
-  mainImage.style.transition = 'opacity 0.15s ease';
 }
 
 /**
@@ -140,13 +184,31 @@ function initLazyLoading() {
         if (entry.isIntersecting) {
           const img = entry.target;
 
-          // Add fade-in animation
+          // Check if image is already loaded (cached images)
+          if (img.complete && img.naturalWidth > 0) {
+            // Image already loaded, ensure it's visible
+            img.style.opacity = '1';
+            return;
+          }
+
+          // Add fade-in animation for images that haven't loaded yet
           img.style.opacity = '0';
           img.style.transition = 'opacity 0.3s ease';
 
-          img.addEventListener('load', () => {
+          // Handle both load and error cases
+          const showImage = () => {
             img.style.opacity = '1';
-          }, { once: true });
+          };
+
+          img.addEventListener('load', showImage, { once: true });
+          img.addEventListener('error', showImage, { once: true });
+          
+          // Fallback: check again after a short delay in case load event already fired
+          setTimeout(() => {
+            if (img.complete && img.naturalWidth > 0) {
+              showImage();
+            }
+          }, 100);
 
           imageObserver.unobserve(img);
         }
@@ -155,7 +217,15 @@ function initLazyLoading() {
       rootMargin: '50px 0px'
     });
 
-    lazyImages.forEach(img => imageObserver.observe(img));
+    lazyImages.forEach(img => {
+      // Don't apply lazy loading to images that are already loaded
+      if (img.complete && img.naturalWidth > 0) {
+        // Image already loaded, ensure it's visible
+        img.style.opacity = '1';
+        return;
+      }
+      imageObserver.observe(img);
+    });
   }
 }
 
